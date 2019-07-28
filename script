@@ -1,0 +1,8 @@
+#!/bin/bash  
+echo "Building build image"
+docker build -t my-react-app .
+docker image prune -f --filter label=stage=builder
+echo "Build Complete, running app"
+docker run -p 80:80 my-react-app
+echo "Cleaning up"
+docker rm $(docker ps -aq)
