@@ -1,4 +1,5 @@
 #!/bin/bash  
+sudo service docker start
 echo "Building build image"
 sudo docker build -t my-react-app /home/ec2-user/simple-node-js-react-npm-app
 sudo docker image prune -f --filter label=stage=builder
