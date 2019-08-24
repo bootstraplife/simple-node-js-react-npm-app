@@ -12,8 +12,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building!'
-                sh 'docker build -t testimage .'
-                sh 'docker run -p 80:80 testimage'
+                sh 'docker build -t testimage --rm .'
+                sh 'docker run -p 80:80 -d testimage'
             }
         }
     }
