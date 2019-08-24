@@ -12,10 +12,10 @@ pipeline {
         stage('Check if container is running') {
             when {
                 expression {
-                    sh (
+                    return sh (
                         script: "docker inspect -f '{{.State.Running}}' deployment",
                         returnStatus: true
-                    )   
+                    ) == 0
                 }
             }
             steps {
