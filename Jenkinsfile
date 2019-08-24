@@ -4,11 +4,6 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
-        stage('Git checkout') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Check if container is running') {
             when {
                 expression {
