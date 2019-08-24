@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Building!'
                 sh 'docker build -t testimage --rm .'
-                sh 'docker image prune -f'
+               // sh 'docker image prune -f'
                 sh 'docker run -p 80:80 -d --name deployment testimage'
             }
         }
