@@ -19,7 +19,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'docker kill deployment'
+                sh 'docker rm -f deployment'
             }
         }
         stage('Build') {
