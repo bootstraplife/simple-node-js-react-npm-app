@@ -14,7 +14,7 @@ pipeline {
                 expression {
                     sh (
                         script: "docker inspect -f '{{.State.Running}}' deployment",
-                        returnStdout: true
+                        returnStatus: true
                     )   
                 }
             }
